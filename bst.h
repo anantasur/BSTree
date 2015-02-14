@@ -9,9 +9,11 @@ struct bst{
  	Node *root;
  	int count;
 }; 
+typedef void (*function)(int);
 
 BSTree createBSTree(void);
 Node *createNode(int);
 int insert(BSTree *,int);
 Node *find(BSTree, int);
 Node *delete(BSTree *, int);
+void traverse(BSTree, function);

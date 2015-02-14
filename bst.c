@@ -71,3 +71,18 @@ Node* delete(BSTree* tree,int data) {
 	}
 	return node; 
 }
+
+void traverse(BSTree tree,function function) {
+	BSTree childTree = createBSTree();
+	if(tree.root){
+		if(tree.root->left) {
+			childTree.root = tree.root->left;
+			traverse(childTree,function);
+		}
+		function(tree.root->data);
+		if(tree.root->right) {
+			childTree.root = tree.root->right;
+			traverse(childTree,function);
+		}
+	}
+}
